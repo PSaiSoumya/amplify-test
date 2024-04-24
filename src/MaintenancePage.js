@@ -1,12 +1,29 @@
-import React from 'react';
+// MaintenancePage.js
 
-function MaintenancePage() {
+import React, { useEffect, useState } from 'react';
+import { Amplify } from 'aws-amplify';
+
+const MaintenancePage = () => {
+  const [isMaintenance, setIsMaintenance] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const config = await Amplify.configure(); // Fetch Amplify configuration
+      const maintenanceMode = config.runtimeConfig.env.MAINTENANCE_MODE;
+      setIsMaintenance(maintenanceMode === 'true');
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="maintenance-page">
-      <h1>Application Under Maintenance</h1>
-      <p>We are currently performing maintenance. Please check back later.</p>
+    <div>
+      {isMaintenance ? (
+        <p>Application under maintenance. Please check back later.</p>
+      ) : (
+        {/* Your application content */}
+      )}
     </div>
   );
-}
+};
 
 export default MaintenancePage;

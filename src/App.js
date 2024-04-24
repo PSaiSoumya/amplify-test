@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Amplify } from 'aws-amplify';
 import './App.css';
-import MaintenancePage from "./MaintenancePage.js"
+import MaintenancePage from "./MaintenancePage"
 
 function App() {
   const [isMaintenance, setIsMaintenance] = useState(false);

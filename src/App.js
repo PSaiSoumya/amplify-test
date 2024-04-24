@@ -7,10 +7,10 @@ import MaintenancePage from './MaintenancePage'; // Import the MaintenancePage c
 const App = () => {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route path="/maintenance" component={MaintenancePage} />
         {/* Other routes */}
-      </Switch>
+      </Routes>
     </Router>
   );
 };

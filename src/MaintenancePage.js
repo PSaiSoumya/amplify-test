@@ -20,7 +20,7 @@ const MaintenancePage = () => {
       {isMaintenance ? (
         <p>Application under maintenance. Please check back later.</p>
       ) : (
-        {/* Your application content */}
+     <p>Hai this test </p>
       )}
     </div>
   );

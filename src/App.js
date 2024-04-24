@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const checkMaintenanceMode = async () => {
       const config = await Amplify.configure();
-      const maintenanceMode = config.runtimeConfig.env.MAINTENANCE_MODE;
+      const maintenanceMode = config.runtimeConfig.env.REACT_APP_MAINTENANCE_MODE;
       setIsMaintenance(maintenanceMode === 'true');
     };
     checkMaintenanceMode();
